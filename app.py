@@ -4,16 +4,18 @@ app = Flask(__name__)
 
 @app.route('/', methods=["GET", "POST"])
 def home():
-    result = ''
-    if request.method == 'POST':
-        data = request.form.get('calculation')
-        try:
-            result = eval(data)
-        except:
-            result = 'Error'
+    resultat = ""
     
-
-    return render_template('index.html', display_result = result)
+    if request.method == "POST":
+        donnees = request.form.get("calculation")
+        
+        try:
+            if donnees:
+                resultat = eval(donnees)
+        except Exception:
+            resultat = "Error"
+            
+    return render_template('index.html', display_result=resultat)
 
 if __name__ == '__main__':
     app.run(debug=True)
