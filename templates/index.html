@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="cacl-container">
+    <div class="calc-container">
         <form method="POST">
              <input type="text" name="calculation" id="screen" value="{{ display_result }}"> 
 
@@ -27,7 +27,7 @@
                 <button type="button" onclick="add('-')">-</button>
 
                 <button type="button" onclick="add('0')">0</button>
-                <button type="button" onclick="reset()">C</button>
+                <button type="button" onclick="clearScreen()">C</button>
                 <button type="button" onclick="add('.')">.</button>
                 <button type="button" onclick="add('+')">+</button>
 
@@ -36,15 +36,16 @@
             </div>
         </form>
     </div>
-    
     <script>
         function add(value) {
             document.getElementById('screen').value += value;
         }
-        function reset() {
+        function clearScreen() {
             document.getElementById('screen').value = "";
+            if (screen.value === "Error") {
+                screen.value = "";
+            }
         }
     </script>
-
 </body>
 </html>

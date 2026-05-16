@@ -1,17 +1,20 @@
 .calc-container {
-    width: 250px;
-    background: #333;
+    width: 290px;
+    background: #343cb0ca;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 20px;
     margin: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15), 
+                inset 0 2px 3px rgba(255, 255, 255, 0.4);
 }
 
 #screen {
     width: 100%;
-    height: 40px;
+    height: 70px;
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 50px;
     text-align: right;
+    background-color: rgba(84, 70, 46, 0.54);
 }
 
 .keys {
@@ -21,12 +24,31 @@
 }
 
 button {
-    padding: 15px;
+    width: 63px;
+    height: 63px;
+    padding: 0; 
+    border-radius: 50%;
     font-size: 18px;
     cursor: pointer;
+    background-color: rgb(201, 201, 96);
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15), 
+                inset 0 2px 3px rgba(255, 255, 255, 0.4);
+    
+    transition: all 0.1s ease;
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2),
+                inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .btn-egale {
-    grid-column: span 2;
-    background-color: orange;
+    grid-column: span 4;
+    background-color: rgb(186, 60, 197);
+}
+
+body {
+    background-color: rgba(128, 128, 128, 0.53);
 }
