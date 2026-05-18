@@ -31,20 +31,25 @@
                 <button type="button" onclick="add('.')">.</button>
                 <button type="button" onclick="add('+')">+</button>
 
-                <!-- Send data to Flask -->
                 <button type="submit" class="btn-egale">=</button>
             </div>
         </form>
     </div>
     <script>
+        let isResultDisplayed = true; 
+
         function add(value) {
-            document.getElementById('screen').value += value;
+            const screen = document.getElementById('screen');
+                        if (isResultDisplayed || screen.value === "Error") {
+                screen.value = "";
+                isResultDisplayed = false;
+            }
+            screen.value += value;
         }
+
         function clearScreen() {
             document.getElementById('screen').value = "";
-            if (screen.value === "Error") {
-                screen.value = "";
-            }
+            isResultDisplayed = false;
         }
     </script>
 </body>
